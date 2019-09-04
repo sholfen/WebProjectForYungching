@@ -12,5 +12,6 @@ namespace WebProjectForYungching.Services.Interfaces
         List<Album> Query();
         void Add(Album album);
         void Update(Album album);
+        void Delete(Album album);
     }
 }

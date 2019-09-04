@@ -22,5 +22,12 @@ namespace DBLib.Repositories
                 $"UPDATE Album SET Title = @Title, ArtistId = @ArtistId WHERE AlbumID = @AlbumID";
             _sqlConnection.Execute(query, album);
         }
+
+        public void Delete(Album album)
+        {
+            string query =
+                $"DELETE FROM Album WHERE AlbumID = @AlbumID;";
+            _sqlConnection.Execute(query, album);
+        }
     }
 }

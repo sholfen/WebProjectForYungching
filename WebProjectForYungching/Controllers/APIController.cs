@@ -42,5 +42,11 @@ namespace WebProjectForYungching.Controllers
             _albumService.Update(album);
             return Content("OK");
         }
+
+        public ActionResult DeleteAlbum(Album album)
+        {
+            _albumService.Delete(album);
+            return Content("OK");
+        }
     }
 }

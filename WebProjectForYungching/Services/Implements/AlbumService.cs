@@ -32,5 +32,10 @@ namespace WebProjectForYungching.Services.Implements
         {
             repository.Update(album);
         }
+
+        public void Delete(Album album)
+        {
+            repository.Delete(album);
+        }
     }
 }
