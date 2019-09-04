@@ -10,7 +10,7 @@ namespace WebProjectForYungching.Services.Implements
 {
     public class AlbumService : IAlbumService
     {
-        private BaseRepository<Album> repository;
+        private AlbumRepository repository;
         public AlbumService()
         {
             repository = new AlbumRepository();
@@ -18,9 +18,19 @@ namespace WebProjectForYungching.Services.Implements
 
         public List<Album> Query()
         {
-            List<Album> list = new List<Album>();
+            List<Album> list = repository.Query();
 
             return list;
+        }
+
+        public void Add(Album album)
+        {
+            repository.Insert(album);
+        }
+
+        public void Update(Album album)
+        {
+            repository.Update(album);
         }
     }
 }

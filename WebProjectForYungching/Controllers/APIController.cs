@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DBLib.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -25,7 +26,21 @@ namespace WebProjectForYungching.Controllers
         [HttpGet]
         public JsonResult GetAllAlbum()
         {
-            return Json(_albumService.Query());
+            return Json(_albumService.Query(), JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult AddAlbum(Album album)
+        {
+            album.AlbumID = _albumService.Query().Count + 1;
+            _albumService.Add(album);
+            return Content("OK");
+        }
+
+        public ActionResult UpdateAlbum(Album album)
+        {
+            _albumService.Update(album);
+            return Content("OK");
         }
     }
 }

@@ -12,7 +12,7 @@ namespace DBLib.Repositories
 {
     public class BaseRepository<T>
     {
-        private SQLiteConnection _sqlConnection { get; set; }
+        protected SQLiteConnection _sqlConnection { get; set; }
         private static ConcurrentDictionary<string, string> SqlCmdDict = new ConcurrentDictionary<string, string>();
 
         public BaseRepository(string connectionString)

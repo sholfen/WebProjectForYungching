@@ -10,5 +10,7 @@ namespace WebProjectForYungching.Services.Interfaces
     public interface IAlbumService
     {
         List<Album> Query();
+        void Add(Album album);
+        void Update(Album album);
     }
 }
